@@ -22,6 +22,17 @@
                         <f:facet name="header">Apellidos</f:facet>
                         <h:outputText value="#{v.lastName}"/>
                     </h:column>
+                    <h:column>
+                    <h:commandLink
+                            class="btn btn-danger"
+                            value="Eliminar"
+                            onclick="if(! confirm('¿Desea eliminar este centro de votación?')) return false;">
+                            <f:ajax 
+                                execute="@this" 
+                                render="@form" 
+                                listener="#{voterListBean.delete(v.dpi)}"/>
+                    </h:commandLink>
+                    </h:column>
                 </h:dataTable>
                 <h:commandLink
                     value="Registrar nuevo votante"
