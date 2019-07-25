@@ -1,5 +1,4 @@
 package com.academik.minitse.dao;
-
 import com.academik.minitse.model.VotingPlace;
 import java.util.List;
 import javax.faces.bean.RequestScoped;
