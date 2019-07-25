@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:composition template="templates/main.xhtml">
+        
+        <ui:define name="title">Registro de partidos</ui:define>
+        
+        <ui:define name="content">
+            <h:form>
+                <h:dataTable id="partidos" class="table" value="#{politicalPartyListBean.allPartys}" var="pp">
+                    <h:column>
+                        <f:facet name="header">Partido</f:facet>
+                        <h:outputText value="#{pp.name}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Candidato</f:facet>
+                        <h:outputText value="#{pp.candidate}"/>
+                    </h:column>    
+                    <h:column>                
+                        <f:facet name="header">Acciones</f:facet>
+                            <!-- Botón para ir al formulario de edición -->
+                            <h:commandLink 
+                                class="btn btn-info" 
+                                value="Editar"
+                                action="#{nav.goEditPoliticalParty(pp.id)}">
+                            </h:commandLink>
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                            <!-- Botón para eliminar -->
+                            <h:commandLink
+                                class="btn btn-danger"
+                                value="Eliminar"
+                                onclick="if(! confirm('¿Desea eliminar este centro de votación?')) return false;">
+                                <f:ajax 
+                                    execute="@this" 
+                                    render="@form" 
+                                    listener="#{politicalPartyListBean.delete(pp.id)}"/>
+                            </h:commandLink>
+                    </h:column>
+                </h:dataTable>
+                <h:commandLink
+                    value="Crear nuevo partido"
+                    class="btn btn-primary"
+                    action="#{nav.goCreatePoliticalParty()}">
+                </h:commandLink>
+                <br/>
+                <br/>
+            </h:form>        
+        </ui:define>
+    </ui:composition>
+</html>
