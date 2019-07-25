@@ -20,7 +20,9 @@
                     </h:form> 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Partidos</a>
+                    <h:form>
+                        <h:commandLink action="#{nav.goPoliticalParty()}" class="nav-link">Partidos</h:commandLink>
+                    </h:form>
                 </li>
                 <li class="nav-item">
                     <h:form>
