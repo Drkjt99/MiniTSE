@@ -29,4 +29,9 @@ public class VoterListBean {
         this.voters = voters;
     }
     
+    public void delete(String dpi) {
+        dao.delete(dpi);
+        voters = dao.findAll();
+    }
+    
 }
