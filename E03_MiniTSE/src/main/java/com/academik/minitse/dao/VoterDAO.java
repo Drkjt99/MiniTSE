@@ -35,4 +35,20 @@ public class VoterDAO {
         return result;
     }
     
+    public Voter findById(String dpi) {
+        Voter place = em.find(Voter.class, dpi);
+        return place;
+    }
+    
+    @Transactional
+    public void delete(String dpi) {
+        Voter voterToDelete = em.find(Voter.class, dpi);
+        em.remove(voterToDelete);
+    }
+    
+    @Transactional
+    public void verify(String dpi) {
+        Voter voterToDelete = em.find(Voter.class, dpi);
+        em.contains(voterToDelete);
+    }   
 }
