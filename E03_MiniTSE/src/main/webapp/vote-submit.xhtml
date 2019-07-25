@@ -10,16 +10,17 @@
         
         <ui:define name="content">
             <h:form>
-                <h:outputLabel value="DPI:"/>
+                <h:outputText value="DPI:"/>
                 <br/>
-                <h:inputText/>
+                <h:inputText value="#{voteSubmitBean.dpi}" class="w-40"/>
                 <br/>
                 <br/>
-                <h:selectOneRadio value="#{voteSubmitBean.selectedVoteOption}" layout="pageDirection">
+                <h:selectOneRadio value="#{voteSubmitBean.selectedVoteOption}"  layout="pageDirection">                    
                     <f:selectItem itemValue="-2" itemLabel="Voto NULO"/>
                     <f:selectItem itemValue="-1" itemLabel="Voto EN BLANCO"/>
                     <f:selectItems 
                         value="#{voteSubmitBean.parties}"
+                        class="btn btn-primary" 
                         var="aPP"
                         itemValue="#{aPP.id}"
                         itemLabel="#{aPP.candidate}"
@@ -28,6 +29,7 @@
                 <h:commandButton 
                     value="Votar" 
                     class="btn btn-primary" 
+                    onclick="if(! confirm('¿esta seguro de ralizar este voto?')) return false;"
                     action="#{voteSubmitBean.vote()}"/>
             </h:form>
         </ui:define>
