@@ -3,7 +3,6 @@ package com.academik.minitse.beans;
 import com.academik.minitse.dao.VoterDAO;
 import com.academik.minitse.model.Voter;
 import com.academik.minitse.utils.DateUtils;
-import java.util.Calendar;
 import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
