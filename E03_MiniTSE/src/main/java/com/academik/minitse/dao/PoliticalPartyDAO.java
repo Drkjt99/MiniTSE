@@ -17,6 +17,11 @@ public class PoliticalPartyDAO {
 
     @PersistenceContext(unitName = "MiniTSE_PU")
     EntityManager em;
+    
+    @Transactional
+    public void register(PoliticalParty newPoliticalParty){
+        em.persist(newPoliticalParty);
+    }
 
     @Transactional
     public List<PoliticalParty> findAll() {
@@ -27,6 +32,22 @@ public class PoliticalPartyDAO {
         );
         List<PoliticalParty> result = query.getResultList();
         return result;
+    }
+    
+    public PoliticalParty findById(Long id) {
+        PoliticalParty place = em.find(PoliticalParty.class, id);
+        return place;
+    }
+    
+    @Transactional
+    public PoliticalParty update(PoliticalParty place) {
+        PoliticalParty updated = em.merge(place);
+        return updated;
+    }
+
+    public void delete(Long id) {
+        PoliticalParty partyToDelete = em.find(PoliticalParty.class, id);
+        em.remove(partyToDelete);
     }
     
 }
