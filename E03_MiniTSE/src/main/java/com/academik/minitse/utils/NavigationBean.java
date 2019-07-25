@@ -11,32 +11,44 @@ import javax.faces.bean.ManagedBean;
 @ApplicationScoped
 public class NavigationBean {
     
-    private String immediateRedirect(String url) {
+    private String inmediateRedirect(String url) {
         return url + "?faces-redirect=true";
     }
     
     public String goVotingPlaces() {
-        return immediateRedirect("voting-places");
+        return inmediateRedirect("voting-places");
     }
     
     public String goCreateVotingPlace() {
-        return immediateRedirect("voting-place-create");
+        return inmediateRedirect("voting-place-create");
     }
 
     public String goEditVotingPlace(Long id) {
-        return immediateRedirect("voting-place-edit") + "&selected_id=" + id;
+        return inmediateRedirect("voting-place-edit") + "&selected_id=" + id;
     }
 
     public String goVoters() {
-        return immediateRedirect("voters");
+        return inmediateRedirect("voters");
     }
 
     public String goCreateVoters() {
-        return immediateRedirect("voter-create");
+        return inmediateRedirect("voter-create");
     }
     
     public String goVoteSubmit() {
-        return immediateRedirect("vote-submit");
+        return inmediateRedirect("vote-submit");
+    }
+    
+    public String goPoliticalParty() {
+        return inmediateRedirect ("political-party");
+    }
+    
+    public String goCreatePoliticalParty() {
+        return inmediateRedirect("political-party-create");
+    }
+    
+    public String goEditPoliticalParty(Long id) {
+        return inmediateRedirect ("political-party-edit") + "&selected_id=" + id;
     }
     
 }
