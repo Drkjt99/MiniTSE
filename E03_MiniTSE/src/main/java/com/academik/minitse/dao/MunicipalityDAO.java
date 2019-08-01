@@ -40,7 +40,5 @@ public class MunicipalityDAO {
         );
         List<Municipality> result = query.getResultList();
         return result;
-    }
-
-    
+    }    
 }
