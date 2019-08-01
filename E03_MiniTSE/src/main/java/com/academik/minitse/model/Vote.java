@@ -1,7 +1,7 @@
 package com.academik.minitse.model;
 
 import java.io.Serializable;
-import javax.persistence.CascadeType;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -34,6 +34,8 @@ public class Vote implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_mesa", nullable = false)
     private VotingTable votingTable;
+    
+    private List<Vote> votes;
 
     public Long getId() {
         return id;
@@ -58,5 +60,12 @@ public class Vote implements Serializable {
     public void setVotingTable(VotingTable votingTable) {
         this.votingTable = votingTable;
     }
-    
+
+    public List<Vote> getVotes() {
+        return votes;
+    }
+
+    public void setVotes(List<Vote> votes) {
+        this.votes = votes;
+    } 
 }
