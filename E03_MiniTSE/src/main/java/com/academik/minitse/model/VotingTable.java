@@ -49,6 +49,10 @@ public class VotingTable implements Serializable {
         this.nullQuantity = 0;
         this.blankQuantity = 0;
     }    
+    
+    public VotingTable(Integer tableNum){
+        this.tableNum = tableNum;
+    }
 
     public Long getId() {
         return id;
@@ -97,5 +101,5 @@ public class VotingTable implements Serializable {
     public void setVotes(List<Vote> votes) {
         this.votes = votes;
     }
-    
+        
 }
