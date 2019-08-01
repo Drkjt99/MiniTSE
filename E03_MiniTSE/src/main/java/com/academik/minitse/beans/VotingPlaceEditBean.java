@@ -74,5 +74,4 @@ public class VotingPlaceEditBean implements Serializable {
         place.setExtraAddress(tempExtraAddress);
         place = daoVotingPlace.update(place);
     }
-
 }
