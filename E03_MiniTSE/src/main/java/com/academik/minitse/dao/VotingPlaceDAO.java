@@ -43,5 +43,4 @@ public class VotingPlaceDAO {
         VotingPlace placeToDelete = em.find(VotingPlace.class, id);
         em.remove(placeToDelete);
     }
-
 }
