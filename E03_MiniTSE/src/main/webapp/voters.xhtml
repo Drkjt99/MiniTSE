@@ -23,14 +23,21 @@
                         <h:outputText value="#{v.lastName}"/>
                     </h:column>
                     <h:column>
-                    <h:commandLink
+                         <!-- Botón para ir al formulario de edición -->
+                        <h:commandLink 
+                            class="btn btn-info" 
+                            value="Editar"
+                            action="#{nav.goEditVoter(v.dpi)}">
+                        </h:commandLink>
+                        <span>&nbsp;&nbsp;&nbsp;</span>
+                        <h:commandLink
                             class="btn btn-danger"
                             value="Eliminar"
                             onclick="if(! confirm('¿Desea eliminar este centro de votación?')) return false;">
-                            <f:ajax 
-                                execute="@this" 
-                                render="@form" 
-                                listener="#{voterListBean.delete(v.dpi)}"/>
+                        <f:ajax 
+                            execute="@this" 
+                            render="@form" 
+                            listener="#{voterListBean.delete(v.dpi)}"/>
                     </h:commandLink>
                     </h:column>
                 </h:dataTable>
