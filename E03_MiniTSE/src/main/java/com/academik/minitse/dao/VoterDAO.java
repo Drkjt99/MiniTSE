@@ -47,8 +47,9 @@ public class VoterDAO {
     }
     
     @Transactional
-    public void verify(String dpi) {
-        Voter voterToDelete = em.find(Voter.class, dpi);
-        em.contains(voterToDelete);
-    }   
+    public Voter update(Voter place) {
+        Voter updated = em.merge(place);
+        return updated;
+    }
+    
 }
