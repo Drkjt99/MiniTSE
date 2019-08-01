@@ -120,5 +120,11 @@ public class Voter implements Serializable {
     public void setVoted(Boolean voted) {
         this.voted = voted;
     }
+    
+    @Override
+    public String toString(){
+        return dpi + table;
+        
+    }
 
 }
