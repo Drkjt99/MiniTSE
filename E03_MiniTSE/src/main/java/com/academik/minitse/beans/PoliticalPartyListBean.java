@@ -7,6 +7,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 
 /**
  *
@@ -26,6 +27,7 @@ public class PoliticalPartyListBean {
         politicalP = daoParty.findAll();
         return politicalP;
     }
+    
     
     public void delete(Long id) {
         daoParty.delete(id);
