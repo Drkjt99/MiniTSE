@@ -6,7 +6,6 @@ import com.academik.minitse.model.PoliticalParty;
 import com.academik.minitse.utils.NabJSFUtil;
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -33,7 +32,7 @@ public class PoliticalPartyEditBean implements Serializable {
         String idAsString = NabJSFUtil.getParameter("selected_id");
         if(idAsString == null) {
             try {
-                NabJSFUtil.redirectTo("voting-places.xhtml");
+                NabJSFUtil.redirectTo("political-party.xhtml");
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
