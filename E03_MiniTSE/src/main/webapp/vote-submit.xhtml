@@ -16,8 +16,8 @@
                 <br/>
                 <br/>
                 <h:selectOneRadio value="#{voteSubmitBean.selectedVoteOption}"  layout="pageDirection">                    
-                    <f:selectItem itemValue="-2" itemLabel="Voto NULO"/>
-                    <f:selectItem itemValue="-1" itemLabel="Voto EN BLANCO"/>
+                    <f:selectItem itemValue="#{voteSubmitBean.tempNullQuantity}" itemLabel="Voto NULO"/>
+                    <f:selectItem itemValue="#{voteSubmitBean.tempBlankQuantity}" itemLabel="Voto EN BLANCO"/>
                     <f:selectItems 
                         value="#{voteSubmitBean.parties}"
                         class="btn btn-primary" 
