@@ -1,4 +1,4 @@
-﻿-- Departamentos
+
 INSERT INTO departamento (id_departamento, nombre) VALUES (1, 'Alta Verapaz');
 INSERT INTO departamento (id_departamento, nombre) VALUES (2, 'Baja Verapaz');
 INSERT INTO departamento (id_departamento, nombre) VALUES (3, 'Chimaltenango');
@@ -22,7 +22,6 @@ INSERT INTO departamento (id_departamento, nombre) VALUES (20, 'Suchitepéquez')
 INSERT INTO departamento (id_departamento, nombre) VALUES (21, 'Totonicapán');
 INSERT INTO departamento (id_departamento, nombre) VALUES (22, 'Zacapa');
 
--- Municipios
 INSERT INTO municipio (id_departamento, id_municipio, nombre) VALUES (1, 1, 'Chahal');
 INSERT INTO municipio (id_departamento, id_municipio, nombre) VALUES (1, 2, 'Lanquín');
 INSERT INTO municipio (id_departamento, id_municipio, nombre) VALUES (1, 3, 'San Juan Chamelco');
