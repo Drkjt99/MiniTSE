@@ -35,6 +35,10 @@ public class NavigationBean {
         return inmediateRedirect("voter-create");
     }
     
+    public String goEditVoter(String id) {
+        return inmediateRedirect ("voter-edit") + "&selected_id=" + id;
+    }
+    
     public String goVoteSubmit() {
         return inmediateRedirect("vote-submit");
     }
