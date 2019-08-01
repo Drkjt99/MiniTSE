@@ -44,7 +44,8 @@ public class PoliticalPartyDAO {
         PoliticalParty updated = em.merge(place);
         return updated;
     }
-
+    
+    @Transactional
     public void delete(Long id) {
         PoliticalParty partyToDelete = em.find(PoliticalParty.class, id);
         em.remove(partyToDelete);
